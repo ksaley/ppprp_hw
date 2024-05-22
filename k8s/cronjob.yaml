@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: statistics-cronjob
 spec:
-  schedule: "*/5 * * * *"
+  schedule: "*/1 * * * *"
   jobTemplate:
     spec:
       template:
@@ -11,7 +11,8 @@ spec:
           containers:
           - name: statistics-script
             image: myscript:latest
+            imagePullPolicy: Always
             env:
             - name: myapp
-              value: "http://127.0.0.1:8000/statistics"
+              value: "http://myapp-service/statistics"
           restartPolicy: OnFailure
