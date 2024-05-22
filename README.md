@@ -6,10 +6,10 @@
 
 ## Запуск
 
-Нужно выполнить скрипт  `deploy.sh`: 
-`minicube start`
-`./deploy.sh`
-`minikube service myapp-service`
+Нужно выполнить следующие команды: 
+* `minicube start`
+* `./deploy.sh`
+* `minikube service myapp-service`
 
 
 Последняя команда выведет информацию об адресе, куда нужно обращаться за статистикой:
