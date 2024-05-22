@@ -1,4 +1,5 @@
 FROM python:3.10.5-slim-buster
 WORKDIR /app
 COPY ../scripts/ ./
+RUN pip install -r requirements.txt
 CMD ["python3", "./script.py"]
