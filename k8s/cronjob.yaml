@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: statistics-cronjob
+spec:
+  schedule: "*/5 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: statistics-script
+            image: myscript:latest
+            env:
+            - name: myapp
+              value: "http://127.0.0.1:8000/statistics"
+          restartPolicy: OnFailure
